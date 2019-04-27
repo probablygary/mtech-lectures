@@ -1,0 +1,37 @@
+createdAt: "2019-01-26T07:30:58.751Z"
+updatedAt: "2019-04-27T01:08:42.057Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "Exam guide"
+tags: [
+  "isy5001"
+  "machine-reasoning"
+]
+content: '''
+  # Exam guide
+  
+  Workshop BTO example
+  - inference diagram
+  
+  
+  ### BTO Recommender
+  Coded in Clips
+  Clips uses Rete Algorithm
+  
+  #### Rete Algorithm
+  > A Rete-based expert system builds a **network of nodes**, where **each node (except the root) corresponds to a pattern occurring in the left-hand-side (the condition part) of a rule**. The **path from the root node to a leaf node defines a complete rule left-hand-side**. Each node has a memory of facts which satisfy that pattern. This structure is essentially a generalized trie. **As new facts are asserted or modified, they propagate along the network, causing nodes to be annotated when that fact matches that pattern**. When a fact or combination of facts causes all of the patterns for a given rule to be satisfied, a leaf node is reached and the corresponding rule is triggered.
+  [Rete algorithm - Wikipedia](https://en.wikipedia.org/wiki/Rete_algorithm)
+  
+  #### Clips Rule Execution
+  >Once a knowledge base (in the form of rules) is built and the factlist and instancelist is prepared, CLIPS is ready to execute rules. **In a conventional language, the starting point, the stopping point, and the sequence of operations are defined explicitly by the programmer**. **With CLIPS, the program flow does not need to be defined quite so explicitly**. The knowledge (rules) and the data (facts and instances) are separated, and the **inference engine provided by CLIPS is used to apply the knowledge to the data**. The basic execution cycle is as follows:
+      >a) If the rule firing limit has been reached or there is no current focus, then execution is halted. Otherwise, the top rule on the agenda of the module which is the current focus is selected for execution. If there are no rules on that agenda, then the current focus is removed from the focus stack and the current focus becomes the next module on the focus stack. If the focus stack is empty, then execution is halted, otherwise step a is executed again. See sections 5.4.10.2, 10.6, 12.2, and 13.7 for information on the focus stack and the current focus.
+      >b) The righthand side (RHS) actions of the selected rule are executed. The use of the return function on the RHS of a rule may remove the current focus from the focus stack (see sections 10.6 and 12.6.7). The number of rules fired is incremented for use with the rule firing limit.
+      >c) As a result of step b, rules may be activated or deactivated. Activated rules (those rules whose conditions are currently satisfied) are placed on the agenda of the module in which they are defined. The placement on the agenda is determined by the salience of the rule and the current conflict resolution strategy (see sections 5.3, 5.4.10, 13.7.5, and 13.7.6). Deactivated rules are removed from the agenda. If the item is being watched (see section 13.2), then an informational message will be displayed each time a rule is activated or deactivated.
+      >d) If dynamic salience is being used, the salience values for all rules on the agenda are reevaluated (see sections 5.4.10, 13.7.9, and 13.7.10). Repeat the cycle beginning with step a. 
+  [BASIC CYCLE OF RULE EXECUTION](https://www.csie.ntu.edu.tw/~sylee/courses/clips/bpg/node5.2.html)
+  
+  ![711d7a5d.png](:storage/8b6f583f-88fb-4544-8380-e12fcda70c05/711d7a5d.png)
+'''
+isStarred: false
+isTrashed: false
+linesHighlighted: []

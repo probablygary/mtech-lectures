@@ -1,0 +1,246 @@
+createdAt: "2019-03-30T04:59:59.006Z"
+updatedAt: "2019-04-27T01:08:01.878Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "RS Day 4"
+tags: [
+  "isy5001"
+  "reasoning-systems"
+  "lecture"
+]
+content: '''
+  # RS Day 4
+  ## Knowledge Discovery w/ Data Mining
+  
+  ### Knowledge Discovery
+  
+  Knowledge Discovery in Databases (KDD)
+  - non-trivial process of identifying valid, novel, potentially useful patterns of relationships in data to drive decision making
+  
+  #### Predictive Data Mining
+  The task of building a model to predict occurence of an event
+  
+  - target variable to be predicted (**supervised learning**)
+  - extract knowledge from historical data, extrapolate to new situations
+  - e.g. decision trees, regression, naïve bayesian network, SVM, NN
+  
+  #### Descriptive Data Mining
+  The task of providing a representation of the data without necessarily modelling a specific outcome
+  
+  - no specific target variable (**unsupervised learning**)
+  - identify patterns in data; extend knowledge and understanding from data
+  - cluster analysis, association rules
+  
+  
+  #### KDD Process
+  1. Selection
+  2. Preprocess
+  3. Transform
+  4. Data Mine
+  5. Evaluate/Interpret
+  
+  
+  #### CRISP-DM
+  CRoss-Industry Standard Process for Data Mining
+  
+  ##### 6-phase Lifecycle
+  1. Business Understanding
+      - determine business objective
+      - assess situation
+      - determine data mining goals
+      - produce project plan
+  2. Data Understanding
+      - collect initial data
+      - describe data
+      - explore data
+      - verify data quality
+  3. Data Preparation
+      - select data
+      - clean data
+      - construct new data
+      - integrate data
+      - format data
+  4. Modelling
+      - select modelling techniques
+      - generate test design
+      - build model
+      - assess model
+  5. Evaluation
+      - evaluate results
+      - review process
+      - determine next steps
+  6. Deployment
+      - plan deployment
+      - plan monitoring and maintenance
+      - produce final report and presentation
+      - review project
+      
+      
+  ### Decision Tree
+  Knowledge Induction
+  - induction is a technology taht automatically extracts knowledge (e.g. decision tree rules) from training examples
+  - important technique for predictive modelling
+  
+  #### Inductive Dichotomiser 3 (ID3) Induction algorithm
+  - Use **information gain** to find most promising attribute
+  - seeks to maximise information gain at each node
+  - process is stopped when no attributes left to consider / homogeneity achieved
+  
+  Entropy:
+  - uncertainty about the value of classification target T
+  
+  Information Gain:
+  - reduction of entropy of T due to knowing the value of attribute A
+  
+  Entropy
+  ![8cc1ab30.png](:storage/cdb664ec-3239-499c-a2bd-cbc90b1cb6fe/8cc1ab30.png)
+  
+  Conditional Entropy
+  ![cbc464da.png](:storage/cdb664ec-3239-499c-a2bd-cbc90b1cb6fe/cbc464da.png)
+  
+  IG
+  ![5afbaeb2.png](:storage/cdb664ec-3239-499c-a2bd-cbc90b1cb6fe/5afbaeb2.png)
+  
+  
+  #### C4.5 Algorithm
+  >Improvements from ID.3 algorithm
+  
+  > Handling both continuous and discrete attributes - In order to handle continuous attributes, C4.5 creates a threshold and then splits the list into those whose attribute value is above the threshold and those that are less than or equal to it.
+  Handling training data with missing attribute values - C4.5 allows attribute values to be marked as ? for missing. Missing attribute values are simply not used in gain and entropy calculations.
+  Handling attributes with differing costs.
+  Pruning trees after creation - C4.5 goes back through the tree once it's been created and attempts to remove branches that do not help by replacing them with leaf nodes.
+  >[C4.5 algorithm - Wikipedia](https://en.wikipedia.org/wiki/C4.5_algorithm)
+  
+  
+  ### Cluster Analysis
+  Partitioning data so that samples that have similar characteristics are grouped together
+  
+  - gain insights about data
+  - simplify data mining problem
+  - use clusters as predictive models
+  
+  #### Clustering Algorithms
+  Generally seek to maximise inter-cluster distance and minimise intra cluster distance
+  Partitioning Clustering
+  - K-means
+  - K-medoids
+  
+  Hierarchical Clustering
+  - Agglomerative 
+  - Divisive
+  
+  #### Distance Measures
+  - Euclidean Distance
+  - Manhattan Distance
+  - Minkovski Distance
+  
+  To measure distance using categorical fields, use one-hot encoding, or if ordinal then convert to integer categories
+  
+  ##### Inter-cluster Distance Measures
+  Single Link
+  - distance btw. clusters is the distance btw. the two closest objects
+  
+  Complete Link
+  - distance btw. clusters is the two most distant objects
+  
+  Centroid
+  - distance btw. centroids
+  
+  #### Partitioning Algorithms
+  ##### K-Means
+  1. Arbitrarily partition objects into k non-empty subsets
+  2. Compute centroids of clusters
+  3. Re-assign each object to the nearest centroid
+  4. Go back to step 2 until no change in assignments
+  
+  Pros: 
+  - relatively efficient
+  
+  Cons:
+  - applicable only when mean is defined
+  - need to determine k
+  - unable to handle noisy data, outliers
+  - not suitable to discover clusters with non-convex shapes
+  - often terminates at local optimum
+  - difficult to determine 'best' clustering
+  
+  ##### K-Medoids
+  Like K-means but using Median (the object with the middle-most value) to calculate centroids
+  
+  **PAM** -  Partitioning Around Medoids
+  1. Start from an initial set of medoids
+  2. Replace one of the medoids by one of the non-medoids if it improves clustering
+  3. Repeat step 2
+  
+  
+  ##### Hierarchical Clustering
+  Agglomerative (small to large cluster)
+  - does not scale well (On^2)
+  - cannot undo what was done previously (not sure what this means?)
+  
+  Divisive (large to small cluster)
+  
+  
+  ##### Clustering Issues
+  - which variables to use
+      - too many variables = poor clusters (noisy, too varied)
+      - no target variable to advise on relevance of variables
+  - interpreting resulting clusters
+  - assessing quality of clusters
+      - not knowing which clustering is 'best'
+      - not knowing if the clusters represent any structure/pattern that is translates IRL or just a product of the algo
+  - utilising clusters
+  
+  Cluster analysis is a heuristic
+  Different methods can generate different solutions
+  Clustering methods may impose spurious structure
+  
+  ##### Quality of Clusters
+  Good if
+  - intra-class similarity is high
+  - inter-class similarity is low
+  
+  Measures
+  - cluster cohesion
+      - within cluster sum of squares
+  - cluster separation
+      - proximity of cluster centroid to overall centroid multiplied by number o fobjects in the cluster
+  
+  ### Association Analysis
+  Determine what products are purchased together/by the same person
+  
+  e.g.: any kind of recommender system
+  
+  Market Basket Analysis:
+  1. Given list of transactions
+  2. Get co-occurence table
+  3. Do link analysis
+  
+  
+  #### Association Rules
+  Based on frequent Item Sets, Rules (antecedents, precedents)
+  
+  Algorithm
+  1.  examine each possible rule and select those whose 'goodness' score is above a threshold
+  
+  
+  Rule Evaluation Metrics
+  1. Support
+      - probability of the combination
+  2. Confidence
+      - confidence(A->B) = support(A & B) / support(A)
+      - basically P(A|B)
+  3. Lift
+      - P(B|A) / P(B)
+      
+      
+  #### Apriori Algorithm
+  1. Find large item sets (item sets that appear frequent *enough*) from transaction data
+  2. Generate association rules from large item sets
+  
+  Relies on the fact that all subsets of a frequent item set must also be frequent
+  Significantly reduces search space
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

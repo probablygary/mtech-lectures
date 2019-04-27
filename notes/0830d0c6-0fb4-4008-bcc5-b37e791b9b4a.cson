@@ -1,0 +1,45 @@
+createdAt: "2019-04-06T01:15:39.364Z"
+updatedAt: "2019-04-27T01:07:56.671Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "RS Day 5"
+tags: []
+content: '''
+  # RS Day 5
+  
+  ## Hybrid Reasoning Systems
+  Intelligent Systems that combine two or more reasoning techniques
+  
+  4 Broad Types of System Architectures
+  1. Independent Sub-systems
+  2. Competing Experts
+  3. Self-tuning
+  4. Cooperating Experts
+  
+  ### Independent Sub-Systems
+  1. Sub-divide problem into independent parts
+  2. Each part is solved by an appropriate subsystem
+  
+  - No cooperation/interaction between each decision making subsystem
+  
+  ### Competing Experts
+  1. Have different solutions offer alternative solutions
+  2. Have another process decide which solution to accept/how to combine (e.g. majority vote, rule-based)
+  
+  ### Self-tuning
+  1. Have one technique tune another (e.g. Decision Tree to find ruleset, use RBS)
+  
+  ### Co-operating Experts
+  1. Have multiple techniques offer multiple solutions
+  2. Aggregate the solutions (pooled expertise; everything is inter-dependent; ensembling)
+  
+  ### Considerations
+  Hybrid solutions offer solutions to a greater range of problems
+  
+  Software integration can be problematic
+  
+  System modelling is the most important task
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

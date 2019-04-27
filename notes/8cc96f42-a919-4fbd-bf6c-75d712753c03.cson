@@ -1,0 +1,118 @@
+createdAt: "2019-03-16T00:55:39.306Z"
+updatedAt: "2019-04-27T01:08:08.263Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "RS Day 2"
+tags: []
+content: '''
+  # RS Day 2
+  ## Informed Search Techniques
+  
+  ### Heuristics
+  How: 
+  1. sort the list of nodes
+  2. explore nodes in order of optimality (best score determined by the evaluation function)
+  
+  Key to performance is **the sorting strategy**
+  
+  But really, how:
+  1. Define a means of evaluating 'goodness' (the evaluation function)
+  2. Ascertain the goal state
+  3. Evaluate the score of each of the current candidate states
+  4. Sort the states by the score
+  5. Traverse the tree according to score
+  
+  #### Typical Best-First Strategies
+  Heuristics : Hill Climbing, Tabu seasrch
+  Heuristics + past cost : A*, Late Acceptance
+  Heuristics + Randomness : Simulated Annealing, GA
+  
+  #### Heuristic Function
+  h(n) = estimated cost of the cheapest path from node n to a goal node
+  OR
+  h(n) = estimated degree of difference between current states and ultimate goal state
+  
+  Generally, lower h(n) == closer to goal
+  
+  When there is no other information available but heuristics, f(n) = h(n)
+  
+  ### Hill-Climbing (Greedy Best First Search)
+  Basically the default algorithm described above.
+  
+  Key point is that at every node, the child nodes are scored, ordered, and the best child node is traversed.
+  
+  Basically depth-first search guided by an evaluation function
+  
+  ### A-Star Search
+  Combining (summing) g(n) (the past path cost from the start node to current node n) and h(n) (te estimated future path cost from the current node to the goal node) 
+  
+  g(n) is known, h(n) is an estimation
+  
+  At every node, child nodes are added to a global queue and sorted by h(n) + g(n)
+  Algorithm is not greedy; possible to explore a different branch if the score is better than the scores of the current child states
+  
+  ### Suboptimal Search Techniques
+  - Hill-climbing prone to settling on local optimum
+  - Search trees generall can have infinite routes
+  - Time and Space problem:
+      - algorithm that forgets its history will repeat past explored paths (time problem)
+      - algorithm that remembers every action state (space problem)
+  
+  Solutions:
+  - include extra search variables
+      - closed list: store every expanded node
+      - open list: store fringe of unexpanded nodes
+  - If the current node mathces a node on the closed list, it is discarded and not expanded
+  
+  
+  ### Tabu Search
+  Tackles cycling by temporarily forbidding moves that would revisit a prior solution
+  
+  Works like Hill-climbing except:
+  - has a Tabu list: a record of forbidden moves
+  - each search step chooses a non-tabu move
+  - every step is added to the tabu list
+  - steps added to Tabu list temporarily; like a sliding window, older steps will be removed from Tabu list and made available again
+  
+  >Local (neighborhood) searches take a potential solution to a problem and check its immediate neighbors (that is, solutions that are similar except for very few minor details) in the hope of finding an improved solution. Local search methods have a tendency to become stuck in suboptimal regions or on plateaus where many solutions are equally fit.
+  
+  >Tabu search enhances the performance of local search by relaxing its basic rule. First, at each step **worsening moves can be accepted if no improving move is available** (like when the search is stuck at a strict local minimum). In addition, prohibitions (henceforth the term tabu) are introduced to discourage the search from coming back to previously-visited solutions.
+  
+  >The implementation of tabu search uses memory structures that describe the visited solutions or user-provided sets of rules.[2] If a potential solution has been previously visited within a certain short-term period or if it has violated a rule, it is marked as "tabu" (forbidden) so that the algorithm does not consider that possibility repeatedly.
+  > [Tabu search - Wikipedia](https://en.wikipedia.org/wiki/Tabu_search)
+  
+  
+  ### Simulated Annealing 
+  Hill-climbing never makes worsening moves
+  Random walk is complete (global optimum is ensure) but inefficient
+  
+  SA combines both:
+  - instead of picking the best move, random move is picked
+  - if move is an improvement, choice is confirmed and node is traversed
+  - and extra threshold parameter can be used to determine the evaluation of improvement (Temperature: x% probability that a worsening move can be accepted/rejected)
+  
+  
+  ### Late Acceptance Hill Climbing
+  >a local search algorithm, which accepts non-improving moves when a candidate cost function is better than it was a number of iterations before. This number appears as a single algorithmic input parameter which determines the total processing time of the search procedure.
+  >[LAHC Paper](https://www.sciencedirect.com/science/article/abs/pii/S0377221716305495)
+  
+  ### Summary of Search Techniques
+  Uninformed Search
+  - evaluate all possible solutions systematically
+  - no guarantee of optimality unless it is exhaustive
+  - impractical for highly combinatorially complex problems
+  - BFS, DFS
+  - needs a complete problem space definition
+  
+  Informed (Heuristic) Search
+  - make use of heuristics/human expertise to focus the search
+  - first solution found is (hopefully) moderately optimal
+  - needs information
+  - less complete but more efficient
+  
+  
+  ## Search-Based Intelligent Systems
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

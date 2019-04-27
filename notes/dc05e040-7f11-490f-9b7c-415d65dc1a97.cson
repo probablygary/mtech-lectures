@@ -1,0 +1,160 @@
+createdAt: "2019-02-16T00:41:30.942Z"
+updatedAt: "2019-04-27T01:08:57.307Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "MR Day 3"
+tags: [
+  "isy5001"
+  "machine-reasoning"
+  "lecture"
+]
+content: '''
+  # MR Day 3
+  ## Technical Machine Inference
+  
+  ### Recognise-Act Control Cycle (pg. 6)
+  - Taking in inputs (through prompts, UI, etc.)
+  - Storing in memory
+  - Rule engine algorithm matches input with rule
+      - by accessing rule base knowledge
+  - Conflict resolution (to resolve multiple rules)
+  
+  
+  
+  ### Three Components of Rule-Based Systems
+  1. Set of business rules
+      - A rule = single chunk of problem-solving knowledge
+      - Like a relationship btw. problem and solution
+  
+  
+  2. Working memory
+      - Contain Rules and Data
+      - Store current state
+  
+  
+  3. Rule Engine
+      - Computational system to implement control strategy (applying the rules)
+      - Patterns in working memory are matched against conditions in rules
+      - Matched rules are called the conflict set
+      - control strategy determines order of priority of rules and resolve conflicts
+      - Uses Recognise-Act cycle
+  
+  
+  
+  ### Inference with Forward Chaining and Backward Chaining
+  Forward Chaining
+  1. begin with facts in WM
+  2. apply rules to generate new facts
+  3. repeat until desired goal is achieved
+  
+  Backward Chaining
+  1. begin with goals (the hypothesis)
+  2. if the goals have sub-goals (other conditions), search facts that match those sub-goals
+  3. repeat until goal is achieved
+  
+  Forward chain = breadth-first search, data-driven
+  Backward chain = depth-first search, goal-driven
+  
+  Forward chaining consumes more memory.
+  
+  See pg.25, day 1 notes
+  
+  
+  ### Conflict Resolution
+  A method of choosing a rule to fire when more than one rule can be fired in a given cycle
+  
+  Conflict Set: the set of rules that are matched with the facts and are activated
+  
+  #### Stategies for Conflict Resolution
+  1. LIFO/FIFO
+      - Last-In-First-Out, First-in-First-Out based on order of matched facts
+  2. Salience
+      - attach priority to rules (weights, ranks), select rule with higher priority
+  3. Recency
+      - order facts by length of time spent in WM, select most recent
+  4. Specificity
+      - select rules requiring highest/lowest number of facts/conditions
+  
+  
+  --- 
+  
+  ## Inference Under Uncertainty
+  ### Certainty Factor
+  - measures of belief or how much confidence we have in the knowledge/rule/process/data
+  - sort of like prior probability, or rather allows experts to encode 'probability' in machine reasoning systems
+  
+  #### CF in rules
+  - If the condition is true then the conclusion is known to be true (proportional to the strength of the CF).
+  ```
+  IF good_earnings    THEN share_up (cf 0.7)
+  IF win_contract     THEN share_up (cf 0.9)
+  ```
+  
+  #### CF in facts
+  - probability of the fact being true
+  - 'What are the chances of X'
+  
+  #### Calculation of CF
+  - CF of the rules AND the facts
+  $$ cf(H,E) = cf(E) * cf(R) $$
+  
+  
+  - CF of multiple hypotheses (pg.44)
+  $$ cf(cf_1, cf_2) = \\begin{cases}
+      cf_1 + cf_2 * (1 - cf_1)    &\\text{if } cf_1 > 0 &\\text{ and } cf_2 > 0 \\\\
+      \\frac{cf_1 + cf_2}{1- min[\\mid cf_1\\mid, \\mid cf_2\\mid]}\\        &\\text{if } cf_1 < 0 &\\text{ or } cf_2 < 0 \\\\
+      cf_1 + cf_2 * (1 + cf_1)    &\\text{if } cf_1 < 0 &\\text{ and } cf_2 < 0 \\\\
+  
+      \\end{cases}
+  
+  $$
+  
+  
+  
+  ### Fuzzy Logic
+  - measures of inclination (degree of belonging) towards a linguistic concept/word, which lacks a rigorous definition
+  - an approach to computing based on "degrees of truth" rather than the usual "true or false" (1 or 0) Boolean logic on which the modern computer is based
+  - aggregate data and form **a number of partial truths** which we aggregate further into **higher truths (higher confidence)** which in turn, when certain “**latent thresholds**” are exceeded, cause certain further results such as motor reaction
+  
+  #### Steps to Fuzzy Logic
+  1. Fuzzification
+      - mapping boolean logic to a distribution
+      - mapping membership function to a fuzzy subset
+  2. Inference
+      - assessing input facts, ascertaining degree of membership to the fuzzy subset (e.g. 30% in class A, 70% in class B)
+  
+  3. Defuzzification (pg.56)
+      - aggregating within and across each fuzzy subset, based on confidence 
+      - Mean of Maximum approach, Centre of Maximum approach
+  
+  #### Extension - Composite Conditions
+  e.g.    IF cond1 OR cond2 THEN conclusion
+          IF cond1 AND cond2 THEN conclusion
+  
+  - AND   = min()
+  - OR    = max()
+  
+  #### Fuzziness vs. Probability
+  Probability
+  - objective, reliant on provision of facts
+  - variation in rate of observation
+  
+  Fuzziness 
+  - subjective, reliant perception
+  - variation in defining things
+  - based on the concept of 'graded membership'
+  
+  
+  --- 
+  
+  ## Knowledge Discovery
+  Data Mining, finding insights/inferences
+  Decision Tree
+  - tree induction with Entropy
+  
+  CRISP-DM
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

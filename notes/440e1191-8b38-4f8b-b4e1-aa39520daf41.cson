@@ -1,0 +1,154 @@
+createdAt: "2019-01-26T01:12:14.994Z"
+updatedAt: "2019-04-27T01:08:30.357Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "MR Day 2"
+tags: [
+  "isy5001"
+  "machine-reasoning"
+  "lecture"
+]
+content: '''
+  # MR Day 2
+  ## Knowledge Representation
+  
+  ### What is Knowledge Representation?
+  - A **scheme** by which to represent knowledge in a machine
+  - in a way that allows the system to use or manipulate the knowledge to solve problems
+  - Explicit knowledge representation enables business knowledge management and retention
+  --
+  <br>
+  
+  - knowledge must be 'saved'/'transplanted'
+  - representation and inference are separate
+      - data structure and processing logic
+  
+  
+  ### Forms of Knowledge Representation
+  - language
+  - mathematical equations
+  - E&R diagram
+  - Database 
+  - Ontology
+  
+  ### Propositional Logic
+  A statement that is either true or false but not both is called a proposition
+  
+  ### Predicate (First Order) Logic
+  Predicate Calculus [ see slides]
+  ![292ecc17.png](:storage/440e1191-8b38-4f8b-b4e1-aa39520daf41/292ecc17.png)
+  
+  #### How to Establish the Truth of a Predicate
+  ##### Method 1
+  - Predicates need to be propositionalised for use in reasoning
+  - Instantiate (assigning a constant to a variable) the predicate expression
+  
+  ##### Method 2A
+  Universal Quantifier
+  
+  ##### Method 2B
+  Existential Quantifier
+  
+  ---
+  
+  ### Semantic Webs & Knowledge Graphs
+  #### What are Semantic Webs
+  Model for word concepts in human cognition consisting nodes links and labels
+  e.g. ER diagram
+  
+  Nodes:  represent objects, concepts, classes
+  Links:  represent relationships
+  Labels: indicate name of object (nodes); type of   relationship (links)
+  
+  #### Rules
+  consist 
+  - if -> then
+  - antecedent -> consequent
+  - premise -> conclusion
+  - condition -> action
+  
+  ##### Syntax
+  ```
+  IF      person X is ill
+  THEN    person X needs to rest
+  ```
+  
+  Multi-antecedent Rule:
+  ```
+  IF      person X is ill
+  AND/OR  person X is a lecturer
+  THEN    person X cannot rest
+  ```
+  
+  Multiple-consequent Rule:
+  ```
+  IF      <antecedent 1>
+  THEN    <consequent 1>
+          <consequent 2>
+          ...
+          <consequent n>
+          
+  // default behaviour is multi-consequent
+  // is an AND operation
+  ```
+  
+  
+  Rules are considered indepent to each other
+  Rules are based on a priori knowledge or heuristics
+  - derived from domain experts
+  Rules can incorporate uncertainties
+  
+  
+  ## Knowledge Acquisition
+  ### What is Knowledge Acquisition?
+  the **transfer and transformation** of problem-solving knowledge into a form that can be used to build intelligent systems
+  
+  Two types of knowledge Knowledge-Based System/Rule-Based System
+  - Documented sources
+      - collection from printed sources
+      - machine learning
+  - Undocumented source
+      - tacit knowledge only captured from human experts
+  
+  
+  ### Knowledge Elicitation Approach
+  -  PowerPoint Presentation
+  - Capture knowledge using interviews
+  - Interpret & Analyze the transcripts and data obtained
+  - Build knowledge models (knowledge representation)
+  - Use the knowledge models to guide further elicitation
+  - Verify & Validate the captured knowledge
+  - Stop when the knowledge model is enough for building business reasoning system 
+  
+  
+  ## Knowledge Models
+  - a group of **structured representations** of knowledge to allow better understanding of the domain and processes
+  - e.g.:
+      - concept dictionary
+      - decision tree
+      - etc.
+  
+  [see lecture notes for comprehensive list and descriptions]
+  
+  ```flowchart
+  st=>start: Start:>
+  op1=>operation: Query Gate 'n'
+  cond1=>condition: gate_max_passengers > n_passengers
+  cond2=>condition: n_gate_services >= required_services
+  cond3=>condition: is_domestic(gate) && is_domestic(flight)
+  op2=>operation: assign flight to gate
+  op3=>operation: increment 'n'
+  
+  st->op1
+  op1->cond1
+  cond1(yes)->cond2
+  cond2(yes)->cond3
+  cond3(yes)->op2
+  cond1(no)->op3->op1
+  cond2(no)->op3->op1
+  cond3(no)->op3->op1
+  ```
+'''
+isStarred: false
+isTrashed: false
+linesHighlighted: []

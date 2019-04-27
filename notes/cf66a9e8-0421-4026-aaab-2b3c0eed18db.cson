@@ -1,0 +1,134 @@
+createdAt: "2019-03-09T00:51:58.142Z"
+updatedAt: "2019-04-27T01:08:11.158Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "RS Day 1"
+tags: [
+  "isy5001"
+  "reasoning-systems"
+  "lecture"
+]
+content: '''
+  # RS Day 1
+  
+  ## 1.1 Reasoning Systems Overview
+  
+  Analytic Tasks
+  - system exists, but not 'known'
+  - 
+  
+  Synthetic Tasks
+  - solution does not exist, need to generate solution
+  
+  <br>
+  
+  --- 
+  
+  <br>
+  
+  ## 1.2 Uninformed Search Techniques
+  ### Problem Solving by Search
+  - synthesis of a new solution by searching through the **soluton space** containing all possible solutions
+  - each candidate solution is evaluated to see if it is **valid** and/or the **optimum**
+      - a valid solution is one that **satisfies a set of constraints** on the solution variables
+      - an optimal solution is measured by a **user-defined function** which measures 'goodness'
+  
+  
+  ### Problem Solving Algorithm
+  ```
+  (1) Create a pool of solution candidates (search space)
+  (2) Pick up one candidate solution from pool
+  (3) Check whether this candidate is valid (constraints satisfied?)
+      (3)=True If valid, continue
+      (3)=False If not valid, go to (2)
+  (4) Check whether this candidate is the best till now (optimal
+  solution?)
+      (4)=True If best, save this solution as the best then continue 
+      (4)=False If not best, discard this solution then continue
+  (5) Go to (2). Repeat the cycle until a stopping criteria is met.
+  
+  ```
+  
+  
+  ### Search Tree Representation
+  Search/Solution space is representated as a Tree
+  - root node is the most initial state
+  - internal nodes are intermediate states
+  - leaf nodes are candidate solutions or terminating conditions
+  - edges between nodes represents a search step
+  
+  
+  ### Depth-First Search
+  
+  #### DFS Algorithm
+  ```
+  (1) Set N to be a list of initial nodes
+  (2) If N is empty, then exit and signal failure
+  (3) Set n to be the first node in N, and remove n from N
+  (4) Check n:
+      (4.1) If n is a goal node, then exit and signal success
+      (4.2) Otherwise, add the children of n to the front of N then go to step (2)
+  ```
+  
+  #### Drawbacks
+  - can make a wrong choice and be stuck in a very deep branch (or even infinite loops in graph) when a better path is available
+  
+  
+  ### Breadth-First Search
+  #### BFS Algorithm
+  ```
+  (1) Set N to be a list of initial nodes
+  (2) If N is empty, then exit and signal failure
+  (3) Set n to be the first node in N, and remove n from N
+  (4) Check n:
+      (4.1) If n is a goal node, then exit and signal success
+      (4.2) Otherwise, add the children of n to the end of N then go to step (2)
+  ```
+  #### Drawbacks
+  - can consume more memory due to remembering all past explored nodes
+  
+  <br> 
+  
+  ---
+  
+  <br>
+  
+  ## 1.3 Workshop Search Representation
+  
+  ### Shortest Path Around Europe
+  
+  Classic [Travelling salesman problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+  Solution: Djikstra's Algorithm
+  
+  #### Djikstra's Algorithm
+  Let the node at which we are starting be called the initial node. Let the distance of node Y be the distance from the initial node to Y. Dijkstra's algorithm will assign some initial distance values and will try to improve them step by step.
+  
+  1. Mark all nodes unvisited. **Create a set of all the unvisited nodes called the unvisited set**.
+  2. **Assign to every node a tentative distance value**: set it to **zero for our initial node** and to **infinity for all other nodes**. Set the initial node as current.
+  3. For the current node, **consider all of its unvisited neighbors and calculate their tentative distance** through the current node. **Compare the newly calculated tentative distance to the current assigned value** and **assign the smaller one**. For example, if the current node A is marked with a distance of 6, and the edge connecting it with a neighbor B has length 2, then the distance to B through A will be 6 + 2 = 8. If B was previously marked with a distance greater than 8 then change it to 8. Otherwise, keep the current value.
+  4. When we are done considering all of the unvisited neighbors of the current node, **mark the current node as visited and remove it from the unvisited set**. A visited node will never be checked again.
+  5. If the **destination node has been marked visited** (when planning a route between two specific nodes) or if the **smallest tentative distance among the nodes in the unvisited set is infinity** (when planning a complete traversal; occurs when there is no connection between the initial node and remaining unvisited nodes), then stop. The **algorithm has finished**.
+  6. Otherwise, select the **unvisited node that is marked with the smallest tentative distance**, set it as the new "current node", and **go back to step 3**.
+  
+  When planning a route, it is actually not necessary to wait until the destination node is "visited" as above: the algorithm can stop once the destination node has the smallest tentative distance among all "unvisited" nodes (and thus could be selected as the next "current").
+  
+  
+  ### Navigate to Room J
+  
+  Basically a graph structure
+  
+  ### Vehicle Routing
+  
+  Possible solution:
+  Each node contains 9 vectors (one for each vehicle), each vector containing the series of locations to be visited 
+  
+  ![57d9f9dd.png](:storage/cf66a9e8-0421-4026-aaab-2b3c0eed18db/b0023f8f.png)
+  
+  tbh it's quite cheem
+  [Vehicle routing problem - Wikipedia](https://en.wikipedia.org/wiki/Vehicle_routing_problem)
+  
+  [YouTube](https://youtu.be/GkLPGwiTZSM)
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

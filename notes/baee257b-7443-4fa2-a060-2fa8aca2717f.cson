@@ -1,0 +1,197 @@
+createdAt: "2019-01-19T01:10:25.772Z"
+updatedAt: "2019-04-27T01:08:36.455Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "MR Day 1"
+tags: [
+  "machine-reasoning"
+  "isy5001"
+  "lecture"
+]
+content: '''
+  
+  # MR Day 1
+  
+  ## 1.1 Reasoning Types
+  ### 1. Reasoning
+  #### Forward Chaining Inference
+  > Forward chaining **starts with the available data** and **uses inference rules to extract more data** (from an end user, for example) **until a goal is reached**. An inference engine using forward chaining **searches the inference rules until it finds one where the antecedent (If clause) is known to be true**. When such a rule is found, the engine can conclude, or infer, the consequent (Then clause), resulting in the addition of new information to its data.
+  > [Forward chaining - Wikipedia](https://en.wikipedia.org/wiki/Forward_chaining)
+  
+  - breadth-first search
+  - capacity for consciously making sense of things
+  - sense making
+  - verifying facts
+  - based on new/existing information
+  - e.g. 
+      - does this course look difficult to me?
+  
+  ### 2. Thinking
+  #### Backward Chaining Inference
+  > Backward chaining **starts with a list of goals** (or a hypothesis) and **works backwards from the consequent to the antecedent** to **see if any data supports any of these consequents**. An inference engine using backward chaining would **search the inference rules until it finds one with a consequent (Then clause) that matches a desired goal**. If the antecedent (If clause) of that rule is known to be true, then it is added to the list of goals (for one's goal to be confirmed one must also provide data that confirms this new rule).
+  > [Backward chaining - Wikipedia](https://en.wikipedia.org/wiki/Backward_chaining)
+  
+  - depth-first search
+  - 'goal oriented flow of ideas and associations'
+  - e.g. 
+      - I'd like to pass the course assessment
+      - What actions can I take to pass the course assessment
+  
+  ### 3. Learning
+  - Knowledge Acquisition & Representation; Rule Extraction
+  - process of acquiring new/modifying existing knowledge, experience etc.
+  - e.g. 
+      - acquisition of facts from information
+  
+  ### 4. Cognition
+  - set of mental abilities related to knowledge, 
+  - attention, 
+  - problem solving, 
+  - judgement and evaluation, 
+  - comprehension
+  - e.g. 
+      - Survival phase : How can we eat?
+      - inquiry phase: Why do we eat?
+  
+  ### 5. Artificial Intelligence
+  - intelligence demonstrated by machines
+  - mimics cognitive functions
+  - e.g. 
+      - algortihmic trading system
+      - high-frequency trading system
+  
+  ### Reasoning vs. Learning
+  **Reasoning**
+  - using existing knowledge
+  - applying these predicates to the situation
+  - deduction
+  
+  **Learning**
+  - inferring patterns, relations between facts
+  - knowledge discovery
+  - deriving patterns from data
+  
+  
+  ### Analytic Tasks
+  - decomposition of existing systems/environments
+  - diagnosis
+  - assessmen
+  - Input: some data
+  - Output: some characterisation/assessment/inference
+  
+  ### Synthetic Tasks
+  - generation/design of systems
+  - system does not yet exist
+  - input: requirements about system
+  - output: constructed system description
+  
+  
+  ---
+  
+  
+  ## 1.2 Reasoning Types
+  ### Deductive Reasoning
+  >Deductive reasoning, also deductive logic, logical deduction is the process of **reasoning from one or more statements** (premises) to **reach a logically certain conclusion**.
+  >[Deductive reasoning - Wikipedia](https://en.wikipedia.org/wiki/Deductive_reasoning)
+  
+  > Deductive reasoning relies on a **general statement or hypothesis** (sometimes called a premise or standard) **held to be true** to **reach a specific, logical conclusion**. This kind of reasoning sometimes is referred to as top-down thinking or moving from the general to the specific. A common example is this: If A = B and B = C, then deductive reasoning tells us that A = C. 
+  > [Deductive Reasoning Definition and Examples](https://www.thebalancecareers.com/deductive-reasoning-definition-with-examples-2063749)
+  - start with 
+  
+  
+  ### Inductive Reasoning
+  > Inductive reasoning is a method of **reasoning in which the premises are viewed as supplying some evidence for the truth of the conclusion** (in contrast to deductive reasoning). While the conclusion of a deductive argument is certain, **the truth of the conclusion of an inductive argument may be probable, based upon the evidence given.**
+  > [Inductive reasoning - Wikipedia](https://en.wikipedia.org/wiki/Inductive_reasoning)
+  
+  > Inductive reasoning is a type of logical thinking that involves **forming generalizations based on specific incidents you've experienced**, observations you've made, or facts you know to be true or false.
+  > [Inductive Reasoning Definition and Examples](https://www.thebalancecareers.com/inductive-reasoning-definition-with-examples-2059683)
+  
+  
+  ### Abductive Reasoning
+  > Abductive reasoning (also called abduction, abductive inference, or retroduction) is a form of logical inference which **starts with an observation or set of observations** then **seeks to find the simplest and most likely explanation for the observations**. This process, unlike deductive reasoning, **yields a plausible conclusion but does not positively verify it**. **Abductive conclusions are thus qualified as having a remnant of uncertainty or doubt**, which is expressed in retreat terms such as "best available" or "most likely". One can understand abductive reasoning as inference to the best explanation, although not all uses of the terms abduction and inference to the best explanation are exactly equivalent.
+  > [Abductive reasoning - Wikipedia](https://en.wikipedia.org/wiki/Abductive_reasoning)
+  
+  ### Analogical Reasoning
+  > An analogy is a **comparison between two objects**, or systems of objects, that **highlights respects in which they are thought to be similar**. Analogical reasoning is any type of thinking that relies upon an analogy. An analogical argument is an explicit representation of a form of analogical reasoning that **cites accepted similarities between two systems to support the conclusion that some further similarity exists**. **In general (but not always), such arguments belong in the category of inductive reasoning, since their conclusions do not follow with certainty but are only supported with varying degrees of strength**. Here, ‘inductive reasoning’ is used in a broad sense that includes all inferential processes that “expand knowledge in the face of uncertainty” (Holland et al. 1986: 1), including abductive inference.
+  > --[Analogy and Analogical Reasoning (Stanford Encyclopedia of Philosophy)](https://plato.stanford.edu/entries/reasoning-analogy/)
+  - association
+  
+  ### Deductive vs. Inductive vs. Abductive
+  >Deductive reasoning ("top-down logic") contrasts with inductive reasoning ("bottom-up logic") in the following way; in deductive reasoning, a conclusion is reached reductively by applying general rules which hold over the entirety of a closed domain of discourse, narrowing the range under consideration until only the conclusion(s) is left. In inductive reasoning, the conclusion is reached by generalizing or extrapolating from specific cases to general rules, i.e., there is epistemic uncertainty. However, the inductive reasoning mentioned here is not the same as induction used in mathematical proofs – mathematical induction is actually a form of deductive reasoning.
+  
+  <br>
+  
+  >Deductive reasoning differs from abductive reasoning by the direction of the reasoning relative to the conditionals. Deductive reasoning goes in the same direction as that of the conditionals, whereas abductive reasoning goes in the opposite direction to that of the conditionals.
+  >
+  **Machine Learning uses Inductive Reasoning**
+  
+  
+  ### Fuzzy Reasoning
+  - Very approximate decision tree/rule-making
+  - Fuzzy Set Theory
+  
+  > [Fuzzy Reasoning Textbook](https://pdfs.semanticscholar.org/c7da/1542f9e599fcf86ff5d04878aa25408bb79b.pdf)
+  > [Fuzzy Rules & Fuzzy Reasoning](http://ce.sharif.edu/courses/92-93/1/ce957-1/resources/root/Lectures/Lecture4&5.pdf)
+  
+  --- 
+  
+  ## 1.3 Reasoning System Architectures
+  ### Static Reasoning
+  System/Logic already configured
+  Examples:
+  - Logic Programmes
+  - Deductive Classifier
+  - Rule based Systems
+  - Fuzzy Systems
+  - Case-based reasoning systems
+      - Similarity between cases
+  
+  ### Dynamic Reasoning
+  Examples:
+  - Search systems
+  - Simulation systems
+  - Optimisation systems
+  - Recommendation systems
+  - Knowledge Discovery (Data Mining, Machine Learning)
+  - Hybrid Systems
+  
+  ### Cognitive Reasoning
+  'cognition' involves some aspect of human-level context understanding
+  
+  Examples:
+  - Semantic systems
+  - Natural Language systems
+  - Question Answering systems
+  - Negotiation & Debate systems
+  - Multi agent systems (swarm intelligence)
+  - chat-bot system
+  
+  ### Proactive Reasoning Systems (Goal Driven)
+  Examples:
+  - Autonomous software system (sales chatbot, RPA)
+  - Multi Agent cooperative system (warehouse robotic swarm)
+  - constrain solver (global travel planner)
+  
+  
+  ### Reactive Reasoning  Systems (Data Driven)
+  Examples:
+  - Business Rule Management System (BRMS)
+  - Business Process Management System (BPMS)
+  - Constrain Solver (Delivery vehicles scheduler)
+  
+  ### Goal Driven Systems
+  Basically sequences of instructions based on backward chaining inference
+  
+  ### Data/Fact/Knowledge/Process/Rule-driven Systems
+  - Basically seqeuences of instructions based on forward chaining inference
+  - Data, Rules etc. stored in a knowledge base, system checks knowledge/rules and maps corresponding action
+      - So like a system based entirely on if/else clauses
+      - Except that the rules are stored in a repository
+      - The program polls the repository for valid actions
+      - The rules are not embedded inside the code
+  
+  
+'''
+isStarred: false
+isTrashed: false
+linesHighlighted: []

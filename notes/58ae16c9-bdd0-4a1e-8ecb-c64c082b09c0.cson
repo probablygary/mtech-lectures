@@ -1,0 +1,192 @@
+createdAt: "2019-03-23T00:50:39.374Z"
+updatedAt: "2019-04-27T01:08:05.216Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "RS Day 3"
+tags: [
+  "isy5001"
+  "reasoning-systems"
+  "lecture"
+]
+content: '''
+  # RS Day 3
+  
+  ## Evolutionary Computation
+  - involves continuous optimisation and combinatiorial optimisation problems
+  - algorithms are considered global optimisation problems with a *metaheuristic* or *stochastic optimisation character*
+  - is a **population-based algorithm**
+      - i.e. due to lack of domain knowledge, a mathematical model is not feasible, but heuristics are available
+      - e.g. adjusting prices to maximise profit; travelling salesman problem
+  
+  ### Inspired by Darwinian Evolution
+  - survival of the fittest
+  - selection on phenotype through environment
+      - phenotype: set of observable characteristics resulting from genotypic interaction
+  - genotypic inheritance
+      - genotype: the genetic constitution of an organism
+  - reproduction
+  - blind variation
+  
+  
+  *you should look up the list of books in the lecture notes*
+  
+  
+  ### Problem-solving with Evolutionary Algorithms
+  Problems are broken down into parts:
+  - coding of candidate solutions (chromosomes)
+  - objective function (fitness function)
+  - genetic operators (rules to generate new chromosomes)
+  - specific knowledge (to generate constraints)
+  
+  Genetic Search
+  ![9906d1df.png](:storage/58ae16c9-bdd0-4a1e-8ecb-c64c082b09c0/9906d1df.png)
+  
+  
+  - GAs operate on a population (as opposed to on single candidate solutions)
+  - GAs seek to produce better (fitter) candidate solutions by combining the better of the existing solutions (through crossover and mutation)
+  - Ends with stopping criteria
+  
+  Each candidate solution is a permutation of the parameters of the problem
+  
+  GA Pseudocode
+  ![1c5cea68.png](:storage/58ae16c9-bdd0-4a1e-8ecb-c64c082b09c0/1c5cea68.png)
+  
+  
+  #### Step-by-step guide to GA
+  1. Encode the problem's solution to a form that is analogous to nature's chromosomes
+      - e.g. array of binary values/floats or integers representing coefficients
+  2. Initialise Population
+      - should represent random sample of the search space
+      - can be initialised using whatever knowledge is avaliable
+      - each member of the population is evaluated and scored (fitness)
+  3. Generate New Population
+      - structures in the current population are selected for replication based on score
+      - perform crossover, mutation to generate new population
+  
+      Selection
+      - select structures with high fitness individuals
+      - poor-performing structures might to be chosen at all
+  
+      Crossover
+      - combine features of two parent structures to form new candidate solution 
+      - conserves genetic information
+  
+      Mutation
+      - alter one or more components of the selected solution randomly
+      - provide diversity by introducing new information
+  
+  4. Insert new population into old population
+      Generational GA
+      - replace the whole population
+      
+      Steady-state GA
+      - replace only a small fraction; new candidates replace the worst of the old population
+  
+  
+  #### Selection Methods
+  Roulette Wheel/Wheel of Fortune
+  - select new population with respect to probability distribution based on fitness values
+      - calculate fitness of each candidate
+      - find total fitness of population
+      - calculate probaility of selection for each candidate; this probability is directly proportional to fitness
+      - calculate cumulative probability for each candidate
+      - selection is based on this prior probability
+  - there is a chance that higher fitness candidates are not selection 
+  - there iis a chance that weaker fitness candidates are selected 
+  - this is a primitive selection method
+  see [Genetic Algorithms Overview](http://geneticalgorithms.ai-depot.com/Tutorial/Overview.html)
+  
+  Tournament selection
+  - choosing candidates randomly
+  
+  - Binary Tournament
+      - select two candidates at random, better of the two selected
+  - Larger or N-tournament
+      - N individuals selected at random, select best for reproduction
+      
+  Rank Selection
+  - order population according to fitness, then assign new fitness value according to rank
+  
+  - Linear Ranking
+      - rank each candidate in increasing order of fitness (1 to N), assign new subjective fitness value
+  
+  - Exponential 
+      - order, then assign best candidate with fitness value of 1, then second is 0.99, third is 0.99^2, etc.
+  
+  
+  #### Crossover Operators
+  - cutting up the candidate solutions and swapping parts of the candidate solutions
+  
+  Single-point crossover
+  - split the solution into two (single point of split) - one part is to be swapped, the other not
+  
+  Multi-point (k-point) crossover
+  - split at multiple points, some parts swappable, some parts not
+  - usually k = 2
+  
+  Uniform crossover
+  - generate random mask to determine what's swappable, what's not (so no single point of split)
+  
+  **Crossover Rate**
+  probability of crossover
+  parents are replaced by offspring
+  
+  #### Mutation Operators
+  - replace the value of a randomly chosen parameter in the candidate solution by a new arbitrary value
+  - range of arbitrary values can be defined
+  - purpose is to introduce diversity
+  
+  **Mutation Rate**
+  - probability of mutation for each parameter(bit) 
+  
+  
+  #### Stopping Criteria
+  - after a fixed no. of generations
+  - after a candidate solution meets a min. fitness value is selected
+  - after all the candidate solutions in the population have attained a certain degree of homogeneity
+  
+  
+  ### Parameters for GA
+  - Method for encoding candidate solutions
+  - method for selection candidate solutions for reproduction
+  - choice of genetic operators
+  - population size
+      -  increases diversity, reduces probability that GA will prematurely converge; also increases time required to converge
+  - crossover rate
+      -increase CR will increase recombination of schemata; also increases disruption of good candidate solutions
+  - mutation rate
+      - increase MR increases randomness (makes genetic search into random search); also helps re-introduce lost genetic material
+  
+  ### When and How to use GAs
+  When:
+  - no idea how to reasonably solve the problem (require search)
+  - cannot enumerate all possible solutions (large search space)
+  - a heuristic (measure of goodness) is available
+  
+  What do we need?
+  - a measure of goodness (score function)
+  - a suitable representation of the solution (with parameters)
+  - a problem model that defines the behaviour
+  
+  ### Some Caveats
+  - GA can converge to a poor solution
+      - due to poor problem representation
+      - premature convergence
+      - poor fitness function
+      - bad luck (RNG)
+  - no guarantee of converging to global optimum (since we're not enumerating through all possibilities)
+  
+  ### Handling Constraints
+  Soft constraints
+  - factor in degree of violation
+  - include this as a penalty to fitness function; needs to be scaled appropriately
+  
+  Hard Constraints
+  - have adverse impact on performance due to generate-and-test strategy
+  
+  Not Using Constraints
+  - simply choose best fitness 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
