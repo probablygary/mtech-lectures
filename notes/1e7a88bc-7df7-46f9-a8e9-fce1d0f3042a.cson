@@ -1,0 +1,73 @@
+createdAt: "2019-05-01T06:01:03.254Z"
+updatedAt: "2019-05-01T07:22:17.287Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "Cognitive Systems"
+tags: []
+content: '''
+  # Cognitive Systems
+  ## What are Cognitive Systems
+  Cognitive: Dealing with human-like intelligence
+  Systems: multiple interacting components (learning, reasoning, memory)
+  
+  AI Systems but focusing more on Human-Computer Interaction
+  
+  ## Soar Architecture
+  ![bc7ce8f3.png](:storage/1e7a88bc-7df7-46f9-a8e9-fce1d0f3042a/bc7ce8f3.png)
+  1. Representing the problem space as a graph of objects and relations
+  2. Having a production system consisting: 
+      - Working memory
+      - Long-term memory
+          - procedural
+          - declarative
+          - semantic
+          
+  Works very much like rules and facts.
+  - Knowledge is kept in Long-Term memory, represented by Objects and Relations
+  - States and transitions are constructed in working memory
+  - Search the state space (problem space) to determine solutions
+  
+  ## Knowledge Representation & Reasoning
+  ### Semantic Networks
+  ![13f6b48a.png](:storage/1e7a88bc-7df7-46f9-a8e9-fce1d0f3042a/13f6b48a.png)
+  ![e87622fc.png](:storage/1e7a88bc-7df7-46f9-a8e9-fce1d0f3042a/e87622fc.png)
+  Represent semantic relations between concepts
+  
+  What makes a good relationship:
+  - explicit
+  - expose natural constraints
+  - bring objects and relations together
+  - exclude extraneous details
+  - transparent, concise, complete, fast, computable
+  
+  ### Generate and Test
+  1. Generator
+      - generates all possible solutions in solution space
+      - can be dumb (exhaustively generate)
+      - can be smart(er)
+  2. Tester
+      - validate outputs of generator 
+      - remove invalid status
+      - can help generator be smart(er)
+  How to make it smarter:
+  - merge duplicate states
+  - delete states identical to previous states
+  
+  ### Frames
+  ![2a1afe37.png](:storage/1e7a88bc-7df7-46f9-a8e9-fce1d0f3042a/2a1afe37.png)
+  Consisting slots and fillers, some having default values
+  
+  #### Thematic Role System
+  frame system focusing on verbs, containing semantic roles
+  ![16e10eed.png](:storage/1e7a88bc-7df7-46f9-a8e9-fce1d0f3042a/16e10eed.png)
+  ![7831f55a.png](:storage/1e7a88bc-7df7-46f9-a8e9-fce1d0f3042a/7831f55a.png)
+  
+  ### Common Sense Reasoning
+  1. Apply knowledge for preposition
+  2. Apply knowledge for concepts
+  3. Resolve Ambiguity with Primitive actions
+  4. 
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
