@@ -1,11 +1,12 @@
 createdAt: "2019-05-01T06:01:03.254Z"
-updatedAt: "2019-05-01T07:22:17.287Z"
+updatedAt: "2019-05-03T01:55:18.912Z"
 type: "MARKDOWN_NOTE"
 folder: "018706325dd71481f678"
-title: "Cognitive Systems"
+title: "CS Day 1"
 tags: []
 content: '''
-  # Cognitive Systems
+  # CS Day 1
+  
   ## What are Cognitive Systems
   Cognitive: Dealing with human-like intelligence
   Systems: multiple interacting components (learning, reasoning, memory)
