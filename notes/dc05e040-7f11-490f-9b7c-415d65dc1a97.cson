@@ -1,5 +1,5 @@
 createdAt: "2019-02-16T00:41:30.942Z"
-updatedAt: "2019-04-27T01:08:57.307Z"
+updatedAt: "2019-05-03T07:39:53.569Z"
 type: "MARKDOWN_NOTE"
 folder: "018706325dd71481f678"
 title: "MR Day 3"
@@ -57,8 +57,7 @@ content: '''
   
   Forward chaining consumes more memory.
   
-  See pg.25, day 1 notes
-  
+  ![9d399bf8.png](:storage/dc05e040-7f11-490f-9b7c-415d65dc1a97/9d399bf8.png)
   
   ### Conflict Resolution
   A method of choosing a rule to fire when more than one rule can be fired in a given cycle
@@ -82,6 +81,7 @@ content: '''
   ### Certainty Factor
   - measures of belief or how much confidence we have in the knowledge/rule/process/data
   - sort of like prior probability, or rather allows experts to encode 'probability' in machine reasoning systems
+  - range from -1.0 to 1.0
   
   #### CF in rules
   - If the condition is true then the conclusion is known to be true (proportional to the strength of the CF).
