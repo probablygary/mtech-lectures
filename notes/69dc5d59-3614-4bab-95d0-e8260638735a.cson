@@ -1,13 +1,156 @@
 createdAt: "2019-04-27T01:34:23.453Z"
-updatedAt: "2019-04-27T01:34:34.799Z"
+updatedAt: "2019-05-04T03:41:03.324Z"
 type: "MARKDOWN_NOTE"
 folder: "018706325dd71481f678"
-title: ""
+title: "CS Day 2"
 tags: [
   "isy5001"
   "cognitive-systems"
 ]
-content: ""
+content: '''
+  # CS Day 2
+  ## Natural Language Comprehension & Processing
+  Natural Language Understanding 
+  - understand user's request
+  - map user's utterances to intents 
+      - intent detection
+      - slots detection
+  
+  ### Chatbot Architecture
+  ![f9f57b8a.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/f9f57b8a.png)
+  
+  ### Information Extraction
+  Definitions:
+  1. The automatic extraction of (possibly pre-specified) information from natural language documents. (e.g. facts about entities, events, relationships)
+  2. The automatic population of a structured information source (template, logical form)  from natural language documents. (documents may be semi-structured e.g. patents; or unstructured e.g. websites; or free text e.g. documents)
+  
+  Consists:
+  - Named entity recognition
+  - entity labelling
+  - entity linking
+  - co-reference resolution
+  - intent detection (classification)
+  - slot detection (NER)
+  
+  #### Concept, Named Entity, Information
+  Concept
+  - rule or heuristic to create an abstraction
+  - aka. 'natural class'
+  - e.g. 'president of the US' vs. 'president of the UK' -- concept is 'president of country'
+  
+  Named Entity
+  - lowest level of recognition in an IE system
+  - recognised by dictionaries or rules
+  
+  Information
+  - words, named entities, concepts which fulfill a need
+  - often regular, with a pattern
+  - e.g. information about person: name, age, sex, etc.
+  
+  #### Types of Information Extraction Systems
+  1. Rule-based systems
+  1.1 hand-coded rules with domain input
+      - iterative method based on document inspection
+      - slow but good results
+  1.2 induced (machine learning) rules
+      1.2.1 fully ML
+          - use annotated corpus to extract relations
+          - heuristic approach: one rule at a time
+      1.2.2 hybrid systems
+  
+  2. Statistic-based systems
+  - start with well-annotated corpus
+  - derive statistical rules to create model
+  - pros: 
+      - language independent
+      - no linguistic/domain knowledge needed
+      - relatively small effort in creating models
+  - cons:
+      - complexity moves to the corpus (data must be good)
+      - requires very large number of training examples
+  
+  #### Components of an IE System
+  ![36fee643.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/36fee643.png)
+  
+  ##### Tokenisation
+  - Breaking a stream of characters into tokens
+  - use token delimiters (e.g. space, tab, punctuation)
+  - problems:
+      - ambiguity in certain forms (e.g. decimal points, abbreviations, possessive nouns)
+      
+  ##### POS Tagging
+  - determine parts of speech, grammatical categories of each term (e.g. nouns, verbs, adjectives etc.)
+  ![670a11c7.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/670a11c7.png)
+  
+  - dictionary with word-POS correspondence is needed
+      - challenge is to disambiguate words (e.g. 'book' can be noun or verb)
+  
+  POS Taggers
+  1. Rule-based
+      - e.g. Brill's tagger
+      - error-driven transformation-based tagger
+      - how: assign most frequent tag to each word based on dictionary and morphological rules, then apply contextual rules repeatedly to correct errors
+  
+  2. Stochastic Taggers
+      - e.g. CLAWS, Viterbi, Baum-Welch
+      - based on Hidden Markov Models and n-gram probabilities
+      - manually tagged corpus needed to estimate probabilities
+  
+  ##### Shallow Parsing/Chunking
+  - identify phrases in a text (noun phrases, verb phrases, prepositional phrases, etc.)
+  - using information of lemmata, morphological information, word order configuration
+  - usually stochastic
+  - avoid complexity of full parsing
+  
+  ##### Named Entity Recognition
+  - recognition of particular types of proper noun phrases (persons, organisations, locations, etc.)
+  
+  1. Rule-based NER systems
+      - corpus is relatively static
+      - can be fast, especially in well-defined limited domains
+      - comprises: set of rules, policies to control when and how rules are applied
+  
+  2. Statistically-based NER systems
+      - use if well-annotated corpora available
+      - relatively homogenous data (models don't transfer well accros domains)
+      
+  #### Co-reference resolution
+  - determine relationship btw. entities that re related
+      - determine entities with same referent
+          - anaphora (pronouns)
+              - e.g. jerry is bleh. **He** is also blah.  
+          - proper names, nouns, etc.
+              - e.g. Jo and Mary got married. The **bride* and the **groom**
+      - determine definite descriptions
+          - e.g. Usain Bolt, 'the fastest man in the world'
+  
+  #### Intent Classification
+  - use labelled data to build ML models to classify input to intent classes (supervised learning)
+  
+  #### Preprocessing
+  - tokenisation
+  - case normalisation (lowercase)
+  - lemmatisation/stemming
+      - reduce words to root form
+  - punctuation removal
+  - stopword removal
+      - removal of common words with little meaning (the, a, of, etc.)
+      
+  ### Indexing
+  1. Bag of words
+      - term, document, weight on term
+  2. TF-IDF
+      - modify frequency of a word in a document by perceived global importance
+      ![e09202dc.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/e09202dc.png)
+  
+  3. Cosine Similiarity
+      - measure similiarity btw. two vectors
+      - quantify similarity of documents after vectorisation
+  ![4b0f6af9.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/4b0f6af9.png)
+  
+  ## Speech/Vision Cognitive Systems
+  
+'''
 linesHighlighted: []
 isStarred: false
 isTrashed: false
