@@ -1,5 +1,5 @@
 createdAt: "2019-04-27T01:34:23.453Z"
-updatedAt: "2019-05-04T03:41:03.324Z"
+updatedAt: "2019-05-04T07:21:43.599Z"
 type: "MARKDOWN_NOTE"
 folder: "018706325dd71481f678"
 title: "CS Day 2"
@@ -149,6 +149,91 @@ content: '''
   ![4b0f6af9.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/4b0f6af9.png)
   
   ## Speech/Vision Cognitive Systems
+  
+  ### Automatic Speech Recognition
+  Examples (see slides)
+  Challenges (see slides)
+  
+  ### Speech Recognition as Pattern Recognition
+  ![82ddb05e.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/82ddb05e.png)
+  
+  #### Mel Frequency Cepstrel Coefficient (MFCC)
+  ![86481f02.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/86481f02.png)
+  legend:
+  - pre-emphasis: boost amount of energy in high frequencies by signal filtering
+  - windowingextract features from a small window (aka frame)
+  
+  MFCC is like a fourier transform but like, more steps after.
+  The intent is to project audio into a bunch of features that represent phonemes (distinct units of sound)
+  
+  #### Matching: Dynamic Time Warping
+  Measure similarity btw. two temporal sequences that may vary in speed
+  
+  ### Statistical Speech Recognition
+  ![2aa2bd10.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/2aa2bd10.png)
+  ![fad87ae2.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/fad87ae2.png)
+  ![2e0e8c22.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/2e0e8c22.png)
+  Basically find the phoneme with the highest probability of matching the input audio
+  
+  #### Frame Classification
+  Classify frame-by-frame, output probability is modeled by Gaussian Mixture models
+  
+  #### Acoustic Model
+  - Model likelihood of sounds given spectral features, pronunciation models, prior context
+  - represented as Hidden Markov Model
+  
+  ##### Hidden Markov Model
+  - states represent phonemes/other subword units
+  - transition probabilities: how likely does this phoneme follow the other?
+  - observation/output likelihoods: how likely is spectral feature vector to be observed from phone state, given previous timestamp?
+  
+  ![2d12cb74.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/2d12cb74.png)
+  
+  ![947b8408.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/947b8408.png)
+  
+  ![6799b254.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/6799b254.png)
+  
+  #### Lexical Model
+  - bridge btw. acoustic and language models
+  - with lexicon, match phoneme sequence to word
+  ![6b9f772a.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/6b9f772a.png)
+  
+  #### Language Model
+  n-gram model
+  - build n-gram sequence probabilities
+  
+  <br>
+  
+  ---
+  
+  **full disclosure - i'm really lost right now***
+  
+  ---
+  
+  <br>
+  
+  
+  #### Deep Speech Recognition
+  Basically RNNs
+  
+  ### Evaluation of Speech Recognition
+  Word Error Rate: 
+  - Minimum edit distance
+  - Distance in words between the system oiutput and ground truth
+  ![c5487528.png](:storage/69dc5d59-3614-4bab-95d0-e8260638735a/c5487528.png)
+  
+  ## Vision Cognition
+  ### Marr Theory
+  Vision cognitive system pipeline:
+  1. Image Acquisition
+  2. Image enhancement
+  3. Image restoration
+  4. Image Processing
+  5. Feature Representation & description
+  6. Object detection and recognition
+  7. Scene understanding
+  8. Analytics tasks
+  
   
 '''
 linesHighlighted: []
