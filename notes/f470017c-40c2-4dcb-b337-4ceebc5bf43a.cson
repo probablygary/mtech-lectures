@@ -1,0 +1,198 @@
+createdAt: "2019-06-21T09:01:03.896Z"
+updatedAt: "2019-06-21T10:01:00.830Z"
+type: "MARKDOWN_NOTE"
+folder: "018706325dd71481f678"
+title: "PR Day 1"
+tags: []
+content: '''
+  # PR Day 1
+  
+  ## What is Pattern Recognition
+  - automated recognition of paterns and regularities in data
+  - sensing the environment (like a human understands words, recognises faces)
+  
+  ### Supervised Learning
+  - Given labels/cost
+  
+  ### Unsupervised Learning
+  - Not given labels
+  - Form clusters based on similarity criteria
+  
+  ### Reinforcement Learning
+  - no 'desired' label
+  - feedback is provided (goal)
+  
+  ## PR Process
+  1. Data Acquisition
+    - Measurement of physical variables
+    - issues: bandwidth, resolution
+  2. Pre-processing
+    - removal of noise
+    - isolating patterns of interest in the background
+  3. Feature Extraction
+    - finding a new representation in terms of features
+  4. Classification/Clustering
+    - using features to learn models for different tasks
+  5. Post-processing
+    - evaluation of confidence in decisions
+    
+  ### Training & Testing
+  Learn a model using training data
+  Test the model with (separate) test data
+  
+  ## Applications of PR
+  - Handwritten digit/letter recognition
+  - Biometrics: voice, iris, fingerprint, face, and gait recognition
+  - Speech recognition
+  - Smell recognition (e-nose, sensor networks)
+  - Defect detection in chip manufacturing
+  - Interpreting DNA sequences
+  - Medical diagnosis
+  - Terrorist Detection
+  - Credit Fraud Detection
+  - Credit Applications
+  
+  ## Problem Solving with PR
+  ### Feature Vectors
+  a pattern is represented by a set of *d features*, viewed as a d-dimensional **feature vector**
+  
+  ### Data Preprocessing
+  Data Cleaning
+  - fill in missing values, smooth noisy data, identify or remove outliers, resolve inconsistencies
+  
+  Data Integration
+  - integration of multiple databases
+  
+  Data Transformation
+  - normalisation and aggregation
+  
+  Data Reduction
+  - dimensionality reduction - feature selection
+  - numerosity reduction - select/sample records
+  
+  #### Normalisation
+  - Min-max scaling
+    - maps to [0,1]
+  - Z-score (standardisation)
+  note: use the same parameters on the test daatset and new unseen data
+  
+  #### Feature Selection
+  - Curse of dimensionality
+  - Retain only useful information and avoid overfitting
+  - Pros:
+    - reduce computational complexity
+    - improve generalisation
+  
+  #### Dimensionality Reduction
+  - Principal Component Analysis (PCA)
+  - Linear Discriminant Analysis (LDA)
+    - tries to identify attributes that account for the most variance between classes
+    - is a supervised method, using known class labels
+    
+    
+  #### Data Partition & Preparation
+  
+  #### Cross Validation
+  
+  #### Imbalanced Data
+  How to fix:
+  - Data Augmentation
+  - Custom Loss Function
+  
+  Possible occurences:
+  - Fraud Detection
+  - Churn Modelling
+  - Anomaly Detection
+  
+  #### Model Evaluation
+  - Error measures
+  - Overtraining/overfitting
+  - Confusion Matrix
+  - ROC Charts
+  - Gains/Lift
+  
+  #### Overfitting
+  - Model too complex
+  - Model tuned to the training set, does not truly recognise the characteristics of the model
+  
+  #### Generalisation
+  The ability to produce results on novel patterns
+  
+  How to improve:
+  - more training samples (better model estimates)
+  - Simpler models
+  
+  #### Confusion Matrix
+  for comparison of TP/FN/FP/TN
+  
+  #### Receiver Operating Characteristic (ROC)
+  TPR vs. FPR at different thresholds
+  only for models with a confidence/threshold measure
+  
+  
+  #### Gain/Lift
+  ???
+  
+  ### Hyperparameter Tuning
+  Hyperparameters are parameters not directly learnt by the estimators
+  
+  e.g. Kernel, Learning Rate, Batch size
+  
+  ## Supervised Learning
+  ### Linear Regression
+  assumes model y = ax + b
+  
+  ### Logistic Regression
+  Log-transform outputs to [0, 1] 
+  
+  ### Multinomial Logistic Regression
+  generalises logistic regression to muliclass problems
+  
+  ### K Nearest Neighbour
+  - non-linear decision surfaces
+  - can be computationally intensive
+  - distance measure is important
+  - suited for multi-modal classes
+  - scaling issues
+    - attributes must be scaled, else some attributes may be dominant
+  
+  Requirements:
+  1. Feature Space (training data)
+  2. Distance Metric
+  3. A value for K
+  
+  Inference:
+  1. Compute distance to other training records
+  2. identify k neighbours
+  3. use labels of labels to determine label of unkown record
+  
+  Distance Metrics
+  - Euclidean
+  - Hamming
+  
+  Determining Class:
+  - majority vote (mode of K)
+  - weighted factor
+  
+  ### Bayesian Classification
+  Probabilistic model based on Bayes' Theorem
+  ![63efdbfd.png](:storage/f470017c-40c2-4dcb-b337-4ceebc5bf43a/63efdbfd.png)
+  ![294e8c3d.png](:storage/f470017c-40c2-4dcb-b337-4ceebc5bf43a/294e8c3d.png)
+  ![a3f676c8.png](:storage/f470017c-40c2-4dcb-b337-4ceebc5bf43a/a3f676c8.png)
+  
+  Pros: 
+  - easy and fast inference
+  - performs well for multi-class prediction
+  - performs better than logistic regression, needs less training data
+  - performs well for categorical inputs
+  
+  Cons:
+  - assumption of independent predictors - improbably in real life
+  
+  ## Laplace Correction
+  For sparse matrix with many zeroes, add 1 to all values
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
