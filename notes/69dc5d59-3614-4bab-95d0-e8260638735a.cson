@@ -1,5 +1,5 @@
 createdAt: "2019-04-27T01:34:23.453Z"
-updatedAt: "2019-05-04T07:21:43.599Z"
+updatedAt: "2019-05-10T07:36:04.435Z"
 type: "MARKDOWN_NOTE"
 folder: "018706325dd71481f678"
 title: "CS Day 2"
@@ -236,6 +236,8 @@ content: '''
   
   
 '''
-linesHighlighted: []
+linesHighlighted: [
+  5
+]
 isStarred: false
 isTrashed: false
