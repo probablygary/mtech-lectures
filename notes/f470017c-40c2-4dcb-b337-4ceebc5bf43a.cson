@@ -1,11 +1,11 @@
 createdAt: "2019-06-21T09:01:03.896Z"
-updatedAt: "2019-06-21T10:01:00.830Z"
+updatedAt: "2019-06-22T04:18:20.443Z"
 type: "MARKDOWN_NOTE"
 folder: "018706325dd71481f678"
-title: "PR Day 1"
+title: "PSUPR Day 1"
 tags: []
 content: '''
-  # PR Day 1
+  # PSUPR Day 1
   
   ## What is Pattern Recognition
   - automated recognition of paterns and regularities in data
@@ -58,23 +58,23 @@ content: '''
   
   ### Data Preprocessing
   Data Cleaning
-  - fill in missing values, smooth noisy data, identify or remove outliers, resolve inconsistencies
+      - fill in missing values, smooth noisy data, identify or remove outliers, resolve inconsistencies
   
   Data Integration
-  - integration of multiple databases
+      - integration of multiple databases
   
   Data Transformation
-  - normalisation and aggregation
+      - normalisation and aggregation
   
   Data Reduction
-  - dimensionality reduction - feature selection
-  - numerosity reduction - select/sample records
+      - dimensionality reduction - feature selection
+      - numerosity reduction - select/sample records
   
   #### Normalisation
   - Min-max scaling
     - maps to [0,1]
   - Z-score (standardisation)
-  note: use the same parameters on the test daatset and new unseen data
+  note: use the same parameters on the test dataset and new unseen data
   
   #### Feature Selection
   - Curse of dimensionality
@@ -91,12 +91,24 @@ content: '''
     
     
   #### Data Partition & Preparation
+  Partitioning into Training, Validation, Testing
+  Generally speaking, 60 : 20 : 20
+  
+  Types of partitioning:
+  1. Stratified
+  2. Random
   
   #### Cross Validation
+  K-Fold
+  To avoid overfitting
+  Good for small datasets
+  Can use particular folds to build individual models, based on performance
   
   #### Imbalanced Data
   How to fix:
   - Data Augmentation
+      - duplicate data
+      - generate synthetic data
   - Custom Loss Function
   
   Possible occurences:
@@ -124,6 +136,7 @@ content: '''
   
   #### Confusion Matrix
   for comparison of TP/FN/FP/TN
+  ![0f58e3d6.png](:storage/f470017c-40c2-4dcb-b337-4ceebc5bf43a/0f58e3d6.png)
   
   #### Receiver Operating Characteristic (ROC)
   TPR vs. FPR at different thresholds
@@ -131,12 +144,20 @@ content: '''
   
   
   #### Gain/Lift
-  ???
+  Gain: TPs vs. % of population
+  Lift: Ratio of results obtained with/without the model
+  
   
   ### Hyperparameter Tuning
   Hyperparameters are parameters not directly learnt by the estimators
   
   e.g. Kernel, Learning Rate, Batch size
+  Finding Hyperparameters:
+  - manual search
+  - grid search
+  - random search
+  - bayesian optimisation
+  - evolutionary optimisation
   
   ## Supervised Learning
   ### Linear Regression
